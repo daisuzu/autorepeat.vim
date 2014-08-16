@@ -1,0 +1,85 @@
+*autorepeat.txt*	Repeat the normal mode command automatically.
+
+Author  : daisuzu <daisuzu@gmail.com>
+License : MIT license
+
+==============================================================================
+CONTENTS					*autorepeat-contents*
+
+INTRODUCTION			|autorepeat-introduction|
+USAGE				|autorepeat-usage|
+INTERFACE			|autorepeat-interface|
+  VARIABLES			  |autorepeat-variables|
+  KEY-MAPPINGS			  |autorepeat-key-mappings|
+
+
+==============================================================================
+INTRODUCTION					*autorepeat-introduction*
+
+*autorepeat* is a Vim plugin to repeat the normal mode command automatically.
+
+Latest version:
+https://github.com/user/autorepeat.vim
+
+
+==============================================================================
+USAGE						*autorepeat-usage*
+
+Write the following setting to your |vimrc|.
+
+>
+	nmap <Space>. <Plug>(autorepeat)
+<
+
+Key sequence that is entered after "<Space>."  is repeated automatically.
+Repetition continues until you enter any key.
+
+Examples:
+
+	Repeat the movement to the left.(|l|)
+>
+		<Space>.l
+<
+
+	Repeat scroll to the bottom.(|<C-f>|)
+>
+		<Space>.<C-f>
+<
+
+	Repeat the deletion of the next word of the next match.(|n||w||diw|)
+>
+		<Space>.nwdiw
+<
+
+==============================================================================
+INTERFACE					*autorepeat-interface*
+
+------------------------------------------------------------------------------
+VARIABLES					*autorepeat-variables*
+
+g:autorepeat_timeout				*g:autorepeat_timeout*
+	Time to receive the key sequence.
+	This value must be a numeric value in seconds.
+
+	Default value: 0.5
+
+
+g:autorepeat_interval				*g:autorepeat_interval*
+	Intervals to repeat the command.
+	This value must be a string of seconds or milliseconds same as
+	|:sleep|.
+
+	Default value: "50m"
+
+
+------------------------------------------------------------------------------
+KEY-MAPPINGS					*autorepeat-key-mappings*
+
+<Plug>(autorepeat){key-sequence}			*<Plug>(autorepeat)*
+	Repeat {key-sequence} automatically.
+
+	Available mode: normal
+
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:noet:fen:
