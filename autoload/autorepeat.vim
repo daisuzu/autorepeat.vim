@@ -1,5 +1,5 @@
 " autorepeat.vim - Repeat the normal mode command automatically.
-" Version: 0.0.1
+" Version: 0.0.1-1
 " Author: daisuzu <daisuzu@gmail.com>
 " License: MIT license
 
